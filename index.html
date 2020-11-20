@@ -13,11 +13,12 @@
     <title>Weather App</title> 
 </head>
 <body>
-  <div class="topper">
+  <header class="topper">
     <div class="container-fluid" class="topper">
-      <h1 class="display-4">Weather Dashboard</h1>
+      <h1 class="display-3">Weather Dashboard</h1>
     </div>
-  </div>
+  </header>
+
       <div class="container">
         <div class="row">
             <div class="col-sm-4 bg-light">
@@ -29,54 +30,15 @@
                   </div>
                 </div>
             </div>  
-            <div class="col-sm-8"> 
-              <div class="row ml-2 border border-secondary rounded">
-                <div class="col-sm-12">
-                  <h3 class="city-name mb-1 mt-2 bolder" id="current-city-name"></h3>
-                  <p>Temperature:<span class="current-main" id="temperature"></span></p>
-                  <p>Humidity:<span class="current-main" id="humidity"></span></p> 
-                  <p>Wind Speed:<span class="current-main" id="wind-speed"></span></p>
-                  <p>UV index:<span class="current-main" id="uv-index"></span></p> 
+            <div id="current-city" class="col-lg-8 mt-3">
+              <div class="card p-3 rounded">
+                  <h2 id="city"></h2>
+                  <p id="temp">Temperature:</p>
+                  <p id="hum">Humidity:</p>
+                  <p id="windS">Wind Speed:</p>
+                  <p id="uvI">UV Index:</p>
               </div>
-              </div>
-          <div class="col-sm-12">
-            <h2 class="col-sm-12">5-Day Forcast:</h2>
-            <div class="row text-light">
-              <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                <div class="forcast-date"></div>
-                <div class="forcast-icon"></div>
-                <p>Temp:<span class="forcast-temp"></span></p>
-                <p>Humidity:<span id="forcast-hum"></span></p>
-              </div>
-              <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                <div class="forcast-date"></div>
-                <div class="forcast-icon"></div>
-                <p>Temp:<span class="forcast-temp"></span></p>
-                <p>Humidity:<span id="forcast-hum"></span></p>
-              </div>
-              <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                <div class="forcast-date"></div>
-                <div class="forcast-icon"></div>
-                <p>Temp:<span class="forcast-temp"></span></p>
-                <p>Humidity:<span id="forcast-hum"></span></p>
-              </div>
-              <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                <div class="forcast-date"></div>
-                <div class="forcast-icon"></div>
-                <p>Temp:<span class="forcast-temp"></span></p>
-                <p>Humidity:<span id="forcast-hum"></span></p>
-              </div>
-              <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                <div class="forcast-date"></div>
-                <div class="forcast-icon"></div>
-                <p>Temp:<span class="forcast-temp"></span></p>
-                <p>Humidity:<span id="forcast-hum"></span></p>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
+            
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./Assets/script.js"></script>
