@@ -22,22 +22,78 @@
       <div class="container">
         <div class="row">
             <div class="col-sm-4 bg-light">
-                <h4><strong>Search for a City:</strong></h4>
+                <h4>Search for a City:</h4>
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Search for a city" aria-label="Search input" aria-describedby="btn-search">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
                   </div>
                 </div>
             </div>  
-            <div id="current-city" class="col-lg-8 mt-3">
-              <div class="card p-3 rounded">
+            
+            <div id="current-city" class="col-sm-8 mt-3">
+              <div class="card p-4 rounded">
                   <h2 id="city"></h2>
                   <p id="temp">Temperature:</p>
                   <p id="hum">Humidity:</p>
                   <p id="windS">Wind Speed:</p>
                   <p id="uvI">UV Index:</p>
               </div>
+              
+              <div class="col-sm-12 p-2" id ="future-weather">
+                <h3>5-Day Forcast</h3>
+                <div class="row">
+                <div class="col-2 p-2">
+                  <div class="card p-2 bg-primary text-white rounded">
+                      <h5 id="date1"></h5>
+                      <img id="weather-icon">
+                      <p>Temp:</p>
+                      <p>Humidity:</p>
+                  </div>
+                </div>
+                <div class="col-2 p-2">
+                  <div class="card p-2 bg-primary text-white rounded">
+                      <h5 id="date2"></h5>
+                      <img id="weather-icon">
+                      <p>Temp:</p>
+                      <p>Humidity:</p>
+                  </div>
+                </div>
+                <div class="col-2 p-2">
+                  <div class="card p-2 bg-primary text-white rounded">
+                      <h5 id="date3"></h5>
+                      <img id="weather-icon">
+                      <p>Temp:</p>
+                      <p>Humidity:</p>
+                  </div>
+                </div>
+                <div class="col-2 p-2">
+                  <div class="card p-2 bg-primary text-white rounded">
+                      <h5 id="date4"></h5>
+                      <img id="weather-icon">
+                      <p>Temp:</p>
+                      <p>Humidity:</p>
+                  </div>
+                </div>
+                <div class="col-2 p-2">
+                  <div class="card p-2 bg-primary text-white rounded">
+                      <h5 id="date5"></h5>
+                      <img id="weather-icon">
+                      <p>Temp:</p>
+                      <p>Humidity:</p>
+                  </div>
+                </div>
+              </div>
+                  
+  
+              
+                
+            </div>
+          </div>
+          
+            
+
+          </div>
             
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
