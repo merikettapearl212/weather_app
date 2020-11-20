@@ -15,9 +15,9 @@ $("#search-form").on("submit", function(event) {
     $.ajax({
       url: currentDayURL + searchInput,
       method: "GET",
-    }).then(function (response) {
-      console.log(response);
-      
+    }).then(function (results) {
+      console.log(results);
+      $("#city").text(results.name)
     });
 })
 //When input search button clicked
