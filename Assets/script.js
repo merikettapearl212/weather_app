@@ -48,7 +48,7 @@ function getCityWeather(city) {
       var farenheitTemp = (results.main.temp - 273.15) * 1.80 + 32;
       $("#currentTemp").text(farenheitTemp);
       $("#currentHum").text(results.main.humidity);
-      $("WindS").text(results.wind.speed);
+      //$("WindS").text(results.wind.speed);
       //$("#uvIn").text(results)
     });
 
