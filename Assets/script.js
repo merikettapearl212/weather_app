@@ -25,6 +25,7 @@ function getCityWeather(city) {
     }).then(function (results) {
       //console.log(results);
       $("#city").text(results.name)
+      
     });
 }
 
