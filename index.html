@@ -21,15 +21,15 @@
 
       <div class="container">
         <div class="row">
-            <div class="col-sm-4 bg-light">
-                <h4>Search for a City:</h4>
+            <form id="search-form" class="col-sm-4 bg-light">
+              <label for="search-input">Search for a City:</label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Search for a city" aria-label="Search input" aria-describedby="btn-search">
+                  <input type="text" id="search-input" class="form-control" placeholder="Search for a city" aria-label="Search input" aria-describedby="btn-search">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                    <button id="search-btn" class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
                   </div>
                 </div>
-            </div>  
+            </form> 
             
             <div id="current-city" class="col-sm-8 mt-3">
               <div class="card p-4 rounded">
