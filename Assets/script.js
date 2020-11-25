@@ -19,7 +19,7 @@ $("#search-form").on("submit", function (event) {
   //console.log(searchInput);
   getCityWeather(searchInput);
 });
-//Get UVINDEX
+//Get UVINDEX function
 function UVIndex(lt, ln) {
   //lets build the url for uvindex.
   var getuvURL =
@@ -33,7 +33,20 @@ function UVIndex(lt, ln) {
     url: getuvURL,
     method: "GET",
   }).then(function (response) {
+    var uVi = response.value;
+    console.log(uVi);
+
     $("#uvIn").text(response.value);
+    if (uVi <= 3) {
+      $("#uvIn").addClass("bg-success text-white p-1 rounded")
+      $("#uvIn").removeClass("bg-danger bg-warning")
+    } else if (uVi > 3 && UVIndex <= 7) {
+      $("#uvIn").addClass("bg-warning text-white p-1 rounded")
+      $("#uvIn").removeClass("bg-danger bg-warning")
+    } else if (uVi > 7) {
+      $("#uvIn").addClass("bg-danger text-white p-1 rounded")
+      $("#uvIn").removeClass("bg-danger bg-warning")
+    }
   });
 }
 
@@ -64,8 +77,13 @@ function getCityWeather(city) {
     $("#WindS").text(results.wind.speed);
     //$("#uvIn").text(results)
     UVIndex(results.coord.lat, results.coord.lon);
+
+
   });
+  
 }
+
+
 
 //$("#clear-history").on("click",clearHistory);
 //When input search button clicked
@@ -75,5 +93,5 @@ function getCityWeather(city) {
 //get future dates and weather for each card
 //value = "value"
 //var value = localStorage.getItem("key");
-console.log(value);
-localStorage.setItem("socks", "christmas");
+//console.log(value);
+//localStorage.setItem("socks", "christmas");
