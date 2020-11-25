@@ -21,7 +21,7 @@
 
       <div class="container">
         <div class="row">
-            <form id="search-form" class="col-sm-4 bg-light">
+            <form id="search-form" class="col-sm-4">
               <label for="search-input">Search for a City:</label>
                 <div class="input-group mb-3">
                   <input type="text" id="search-input" class="form-control" placeholder="Search for a city" aria-label="Search input" aria-describedby="btn-search">
@@ -30,11 +30,10 @@
                   </div>
                 </div>
                 <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
-                <div class="col-3">
-                  <ul class="list-group">
-                    <li class="list-group-item cityList"></li>
-                </ul>
-              </div>
+                <div id="searches-container">
+                  <ul class="list-group col-sm-12" id="recentSearches">
+                    </ul>
+                </div>
             </form> 
             
             <div id="current-city" class="col-sm-8 mt-3">

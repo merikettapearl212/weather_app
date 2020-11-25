@@ -1,4 +1,5 @@
-//onclick search btn
+//searches button 
+//var citysearchEl = $("#recentSearches")
 
 //API key
 var apiKey = "3f5256b0aed6bc757eed5b3080beadb6";
@@ -6,11 +7,7 @@ var apiKey = "3f5256b0aed6bc757eed5b3080beadb6";
 var todaysDate = moment().format("MM/DD/YYYY");
 //build the URL to query database
 
-var fivedayURL =
-  "https://api.openweathermap.org/data/2.5/forecast?q=" +
-  city +
-  "&appid=" +
-  apiKey;
+  
 
 $("#search-form").on("submit", function (event) {
   // since it is a form, we will event.preventDefault() in order to stop the page from refreshing automatically
@@ -34,7 +31,7 @@ function UVIndex(lt, ln) {
     method: "GET",
   }).then(function (response) {
     var uVi = response.value;
-    console.log(uVi);
+    //console.log(uVi);
 
     $("#uvIn").text(response.value);
     if (uVi <= 3) {
@@ -52,13 +49,13 @@ function UVIndex(lt, ln) {
 
 //city search history
 
-function getCityWeather(city) {
+function getCityWeather(cityName) {
   var currentDayURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    city +
+    cityName +
     "&appid=" +
     apiKey;
-  console.log(currentDayURL);
+  //console.log(currentDayURL);
 
   $.ajax({
     url: currentDayURL,
@@ -81,6 +78,22 @@ function getCityWeather(city) {
 
   });
   
+}
+function fivedayURL(city) {
+  var getfiveDayURL =
+  "https://api.openweathermap.org/data/2.5/forecast?q=" +
+  city +
+  "&appid=" +
+  apiKey;
+  console.log(getfiveDayURL);
+
+  $.ajax({
+    url: getfiveDayURL,
+    method: "GET",
+  }).then(function(response){
+   
+    
+  });
 }
 
 
