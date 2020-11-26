@@ -15,6 +15,7 @@ $("#search-form").on("submit", function (event) {
   var searchInput = $("#search-input").val();
   //console.log(searchInput);
   getCityWeather(searchInput);
+  fivedayURL(searchInput);
 });
 //Get UVINDEX function
 function UVIndex(lt, ln) {
@@ -45,6 +46,21 @@ function UVIndex(lt, ln) {
       $("#uvIn").removeClass("bg-danger bg-warning")
     }
   });
+}
+//Get five day forcast URL 
+function fivedayURL(city) {
+  //build url for 5day forcast
+  var getfiveDayURL =
+  "https://api.openweathermap.org/data/2.5/forecast?q=" +
+  city +
+  "&appid=" +
+  apiKey;
+  console.log(getfiveDayURL);
+
+  $.ajax({
+    url: getfiveDayURL,
+    method: "GET",
+  })
 }
 
 //city search history
@@ -79,25 +95,10 @@ function getCityWeather(cityName) {
   });
   
 }
-function fivedayURL(city) {
-  var getfiveDayURL =
-  "https://api.openweathermap.org/data/2.5/forecast?q=" +
-  city +
-  "&appid=" +
-  apiKey;
-  console.log(getfiveDayURL);
-
-  $.ajax({
-    url: getfiveDayURL,
-    method: "GET",
-  }).then(function(response){
-   
-    
-  });
-}
 
 
-
+//var citysearched = localStorage.getItem("")
+//localStorage.setItem("")
 //$("#clear-history").on("click",clearHistory);
 //When input search button clicked
 //store input in local storage
