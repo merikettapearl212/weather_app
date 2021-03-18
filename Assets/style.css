@@ -9,7 +9,7 @@ body {
     
 }
 
-#search-form {
+#search-form-container {
     background-color: rgba(68, 67, 67, 0.411);
     border-radius: 2%;
 }

@@ -21,7 +21,8 @@
 
       <div class="container">
         <div class="row">
-            <form id="search-form" class="col-sm-4 text-white">
+            <div id="search-form-container" class="col-sm-4 text-white">
+              <form id="search-form">
               <label for="search-input">Search for a City:</label>
                 <div class="input-group mb-3">
                   <input type="text" id="search-input" class="form-control" placeholder="Search for a city" aria-label="Search input" aria-describedby="btn-search">
@@ -29,12 +30,14 @@
                     <button id="search-btn" class="btn btn-outline-secondary" type="submit"><i class="fas fa-search text-white"></i></button>
                   </div>
                 </div>
+              </form>
                 <button class=" btn btn-info" type="button" id="clear-history">Clear history</button>
                 <div id="searches-container">
                   <div class="list-group col-sm-12" id="recentSearches">
                   </div>
                 </div>
-            </form> 
+                
+              </div> 
             
             <div id="current-city" class="col-sm-8 mt-3">
               <div class="card p-4 rounded text-white">
@@ -46,7 +49,7 @@
                   <p>Temperature: <span id="currentTemp"></span>&deg F</p>
                   <p>Humidity: <span id="currentHum"></span>%</p>
                   <p>Wind Speed: <span id="WindS"></span>MPH</p>
-                  <p>UV Index: <span class="currentUv bg-danger rounded py-2 px-2 text-white" id="currentUv"></span></p>
+                  <p>UV Index: <span class="currentUv bg-danger rounded py-2 px-2 text-white" id="currentUvindex"></span></p>
               </div>
               
               <div class="d-flex flex-row justify-content-between">

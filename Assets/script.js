@@ -30,6 +30,7 @@ $("#search-form").on("submit", function (event) {
 });
 //Get UVINDEX function
 function UVIndex(lt, ln) {
+  console.log
   //lets build the url for uvindex.
   var getuvURL =
     "https://api.openweathermap.org/data/2.5/uvi?appid=" +
@@ -43,18 +44,21 @@ function UVIndex(lt, ln) {
     method: "GET",
   }).then(function (response) {
     var uVi = response.value;
-    //console.log(uVi);
+    console.log(uVi);
     
-    $("#currentUv").text(response.value);
+    $(".currentUv").text(response.value);
+    
+    $(".currentUv").removeClass("bg-danger bg-warning bg-success")
+    
     if (uVi <= 3) {
-      $("#currentUv").addClass("bg-success text-white p-1 rounded")
-      $("#currentUv").removeClass("bg-danger bg-warning")
-    } else if (uVi > 3 && UVIndex <= 7) {
-      $("#currentUv").addClass("bg-warning text-white p-1 rounded")
-      $("#currentUv").removeClass("bg-danger bg-warning")
+      $(".currentUv").addClass("bg-success text-white p-1 rounded")
+     
+    } else if (uVi > 3 && uVi <= 7) {
+      $(".currentUv").addClass("bg-warning text-white p-1 rounded")
+      
     } else if (uVi > 7) {
-      $("#currentUv").addClass("bg-danger text-white p-1 rounded")
-      $("#currentUv").removeClass("bg-danger bg-warning")
+      $(".currentUv").addClass("bg-danger text-white p-1 rounded")
+     
     }
   });
 }
@@ -119,8 +123,8 @@ function getCityWeather(cityName) {
     $("#currentHum").text(results.main.humidity);
 
     $("#WindS").text(results.wind.speed);
-    $("#currentUv").text(results.coord.lat, results.coord.lon)
-    // UVIndex(results.coord.lat, results.coord.lon);
+    // $("#currentUv").text(results.coord.lat, results.coord.lon)
+    UVIndex(results.coord.lat, results.coord.lon);
 
 
   });
