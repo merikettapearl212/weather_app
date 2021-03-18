@@ -1,6 +1,3 @@
-//searches button 
-//var citysearchEl = $("#recentSearches")
-
 //API key
 var apiKey = "3f5256b0aed6bc757eed5b3080beadb6";
 //moment()
@@ -8,11 +5,25 @@ var todaysDate = moment().format("MM/DD/YYYY");
 //build the URL to query database
 
   
+var savedSearch = JSON.parse(localStorage.getItem("savedCities")) || [];
+
+for (i = 0; i < savedSearch.length; i++) {
+  var cityBtn = $(`<button class="list-group-item" data-city="${savedSearch[i]}">${savedSearch[i]}</button>`);
+  $("#recentSearches").prepend(cityBtn);
+}
 
 $("#search-form").on("submit", function (event) {
   // since it is a form, we will event.preventDefault() in order to stop the page from refreshing automatically
   event.preventDefault();
   var searchInput = $("#search-input").val();
+ cityBtn = $(`<button class="list-group-item" data-city="${searchInput}">${searchInput}</button>`);
+  
+    $("#recentSearches").prepend(cityBtn);
+
+    savedSearch.push(searchInput);
+      console.log(searchInput)
+    localStorage.setItem("savedCities", JSON.stringify(savedSearch));
+
   //console.log(searchInput);
   getCityWeather(searchInput);
   fivedayURL(searchInput);
@@ -47,7 +58,21 @@ function UVIndex(lt, ln) {
     }
   });
 }
+//Get five day forcast URL 
+function fivedayURL(city) {
+  //build url for 5day forcast
+  var getfiveDayURL =
+  "https://api.openweathermap.org/data/2.5/forecast?q=" +
+  city +
+  "&appid=" +
+  apiKey;
+  console.log(getfiveDayURL);
 
+  $.ajax({
+    url: getfiveDayURL,
+    method: "GET",
+  })
+}
 
 //city search history
 
@@ -83,18 +108,19 @@ function getCityWeather(cityName) {
 }
 
 
-//Get five day forcast URL 
-function fivedayURL(city) {
-  //build url for 5day forcast
-  var getfiveDayURL =
-  "https://api.openweathermap.org/data/2.5/forecast?q=" +
-  city +
-  "&appid=" +
-  apiKey;
-  console.log(getfiveDayURL);
 
-  $.ajax({
-    url: getfiveDayURL,
-    method: "GET",
-  })
-}
+$("#recentSearches").on("click", "button", function () {
+
+ searchInput = $(this).data("city");
+ cityBtn = $(`<button class="list-group-item" data-city="${searchInput}">${searchInput}</button>`);
+  
+  getCityWeather(searchInput);
+  fivedayURL(searchInput);
+});
+
+var recentSearches = document.getElementById("recentSearches")
+document.querySelector("#clear-history").addEventListener("click", function (){
+  recentSearches.style.display = "none";
+  localStorage.clear();
+  
+})
