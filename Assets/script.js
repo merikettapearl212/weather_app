@@ -47,21 +47,7 @@ function UVIndex(lt, ln) {
     }
   });
 }
-//Get five day forcast URL 
-function fivedayURL(city) {
-  //build url for 5day forcast
-  var getfiveDayURL =
-  "https://api.openweathermap.org/data/2.5/forecast?q=" +
-  city +
-  "&appid=" +
-  apiKey;
-  console.log(getfiveDayURL);
 
-  $.ajax({
-    url: getfiveDayURL,
-    method: "GET",
-  })
-}
 
 //city search history
 
@@ -97,15 +83,18 @@ function getCityWeather(cityName) {
 }
 
 
-//var citysearched = localStorage.getItem("")
-//localStorage.setItem("")
-//$("#clear-history").on("click",clearHistory);
-//When input search button clicked
-//store input in local storage
-//GET current weather (temp/wind/humidity/uv index) for city in big card
-//append to each in html
-//get future dates and weather for each card
-//value = "value"
-//var value = localStorage.getItem("key");
-//console.log(value);
-//localStorage.setItem("socks", "christmas");
+//Get five day forcast URL 
+function fivedayURL(city) {
+  //build url for 5day forcast
+  var getfiveDayURL =
+  "https://api.openweathermap.org/data/2.5/forecast?q=" +
+  city +
+  "&appid=" +
+  apiKey;
+  console.log(getfiveDayURL);
+
+  $.ajax({
+    url: getfiveDayURL,
+    method: "GET",
+  })
+}

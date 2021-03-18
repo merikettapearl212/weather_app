@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://physicsworld.com/wp-content/uploads/2020/08/sun-rays-152304506-Shutterstock_Volodymyr-Goinyk.jpg");
+    background-image: url("https://images.pexels.com/photos/139366/pexels-photo-139366.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: cover;
 }
 .topper {  
@@ -10,7 +10,8 @@ body {
 }
 
 #search-form {
-    background-color: rgba(255, 255, 255, 0.411);
+    background-color: rgba(68, 67, 67, 0.411);
+    border-radius: 2%;
 }
 
 .card {
@@ -18,10 +19,14 @@ body {
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
-    background-color: rgba(255, 255, 255, 0.411);
+    background-color:  rgba(68, 67, 67, 0.411);
 }
     
 label {
     margin-top: .5rem;
+}
+
+.btn-outline-secondary {
+    background-color: #6c757d;
 }
     
