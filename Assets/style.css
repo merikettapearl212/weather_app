@@ -11,7 +11,7 @@ body {
 
 #search-form-container {
     background-color: rgba(68, 67, 67, 0.411);
-    border-radius: 2%;
+    /* border-radius: 2%; */
 }
 
 .card {
@@ -30,3 +30,6 @@ label {
     background-color: #6c757d;
 }
     
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.685);
+}

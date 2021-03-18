@@ -22,7 +22,7 @@ The Weather app homework was to help better our understanding of retrieving data
 
 
 ## Screenshot:
-![Screenshot](Assets/images/weather-app-screenshot.png)
+![Screenshot](Assets/images/screencapture-127-0-0-1-5500-index-html-2021-03-18-14_33_47.png)
 
 
 ## Links
