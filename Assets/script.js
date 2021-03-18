@@ -45,16 +45,16 @@ function UVIndex(lt, ln) {
     var uVi = response.value;
     //console.log(uVi);
     
-    $("#uvIn").text(response.value);
+    $("#currentUv").text(response.value);
     if (uVi <= 3) {
-      $("#uvIn").addClass("bg-success text-white p-1 rounded")
-      $("#uvIn").removeClass("bg-danger bg-warning")
+      $("#currentUv").addClass("bg-success text-white p-1 rounded")
+      $("#currentUv").removeClass("bg-danger bg-warning")
     } else if (uVi > 3 && UVIndex <= 7) {
-      $("#uvIn").addClass("bg-warning text-white p-1 rounded")
-      $("#uvIn").removeClass("bg-danger bg-warning")
+      $("#currentUv").addClass("bg-warning text-white p-1 rounded")
+      $("#currentUv").removeClass("bg-danger bg-warning")
     } else if (uVi > 7) {
-      $("#uvIn").addClass("bg-danger text-white p-1 rounded")
-      $("#uvIn").removeClass("bg-danger bg-warning")
+      $("#currentUv").addClass("bg-danger text-white p-1 rounded")
+      $("#currentUv").removeClass("bg-danger bg-warning")
     }
   });
 }
@@ -119,8 +119,8 @@ function getCityWeather(cityName) {
     $("#currentHum").text(results.main.humidity);
 
     $("#WindS").text(results.wind.speed);
-    //$("#uvIn").text(results)
-    UVIndex(results.coord.lat, results.coord.lon);
+    $("#currentUv").text(results.coord.lat, results.coord.lon)
+    // UVIndex(results.coord.lat, results.coord.lon);
 
 
   });
